@@ -12,7 +12,7 @@ module rca64(
 
   wire [64:0] c;
 
-  assign c[0] = cin;
+  assign #(2) c[0] = cin;
 
   genvar i;
 
@@ -32,6 +32,6 @@ module rca64(
 
   endgenerate
 
-  assign cout = c[64];
+  assign #(2) cout = c[64];
 
 endmodule
