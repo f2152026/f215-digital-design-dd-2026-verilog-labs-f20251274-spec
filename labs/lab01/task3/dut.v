@@ -3,40 +3,27 @@
 module dut(
 
   input  [3:0] a,
+
   input  [3:0] b,
+
   input        cin,
+
   output [3:0] sum,
+
   output       cout
 
 );
 
-  // Select exactly ONE implementation
+  // ---- Option 1: delayed ripple-carry adder ----
 
-  // Option 1: delayed ripple-carry adder
-  rca U_IMPL (
-    .a(a),
-    .b(b),
-    .cin(cin),
-    .sum(sum),
-    .cout(cout)
-  );
+  rca U_IMPL (.a(a), .b(b), .cin(cin), .sum(sum), .cout(cout));
 
-  // Option 2: gate-level carry-lookahead adder
-  // cla4 U_IMPL (
-  //   .a(a),
-  //   .b(b),
-  //   .cin(cin),
-  //   .sum(sum),
-  //   .cout(cout)
-  // );
+  // ---- Option 2: gate-level carry-lookahead adder ----
 
-  // Option 3: dataflow carry-lookahead adder
-  // cla4_dataflow U_IMPL (
-  //   .a(a),
-  //   .b(b),
-  //   .cin(cin),
-  //   .sum(sum),
-  //   .cout(cout)
-  // );
+  // cla4 U_IMPL (.a(a), .b(b), .cin(cin), .sum(sum), .cout(cout));
+
+  // ---- Option 3: dataflow carry-lookahead adder ----
+
+  // cla4_dataflow U_IMPL (.a(a), .b(b), .cin(cin), .sum(sum), .cout(cout));
 
 endmodule
