@@ -9,7 +9,7 @@
 // come back and fix this file.
 
 module comp2 (
-  input  [1:0] A,
+  input  [1:0] A, 
   input  [1:0] B,
   output       GT,
   output       LT,
